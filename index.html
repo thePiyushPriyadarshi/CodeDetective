@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>LeetCode User Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="heading">
+            <h1>Find LeetCode User Detail</h1>
+        </div>
+        <div class="card">
+            <form data-searchForm>
+                <div class="searchbar-container active">
+                    <input id="input" placeholder="Enter a LeetCode username..." required>
+                    <button class="btn-search" id="submit" type="submit">Search</button>
+                </div>
+            </form>
+            <div class="profile-container">
+                <div class="profile-content">
+                    <div class="username">
+                        <h2>Username: </h2>
+                        <h2 data-username></h2>
+                    </div>
+                    <div class="problem">
+                        <div class="problem-solved">
+                            <p>Easy</p>
+                            <p data-easy>2/3</p>
+                        </div>
+                        <input type="range" min="0" max="1000" disabled slider-easy>
+                    </div>
+                    <div class="problem">
+                        <div class="problem-solved">
+                            <p>Medium</p>
+                            <p data-medium></p>
+                        </div>
+                        <input type="range" min="0" disabled slider-medium>
+                    </div>
+                    <div class="problem">
+                        <div class="problem-solved">
+                            <p>Hard</p>
+                            <p data-hard></p>
+                        </div>
+                        <input type="range" min="0" disabled slider-hard>
+                    </div>
+                    <div class="detail">
+                        <p data-rank></p>
+                        <p data-acceptance>5555</p>
+
+                    </div>
+                    <!-- <p data-acceptenceRte></p>  -->
+                </div>
+                <div class="default">
+                    <h2>Enter User Id to get Details</h2>
+                </div>
+                <div class="not-found-container">
+                    <img src="assets/not-found.png" alt="" loading="lazy">
+                    <p error-Msg></p>
+                </div>
+                <div class="loading">
+                    <img src="assets/loading.gif" alt="" width="150" height="150" loading="lazy">
+                    <h2>Loading</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
