@@ -17,11 +17,15 @@
     <div id="wrapper">
         <div class="heading">
             <h1>CodeDetective</h1>
+            <div id="btn-mode">
+                <p id="mode-text">DARK</p>
+                <div class="icon-container"><img id="mode-icon" src="./assets/moon-icon.svg" alt=""></div>
+            </div>
         </div>
         <div class="card">
             <form data-searchForm>
                 <div class="searchbar-container active">
-                    <input id="input" placeholder="Enter a LeetCode username..." required>
+                    <input id="input" type="search" name="user-name" placeholder="Enter a LeetCode username..." required>
                     <button class="btn-search" id="submit" type="submit">Search</button>
                 </div>
             </form>

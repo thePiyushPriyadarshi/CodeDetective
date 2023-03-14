@@ -35,6 +35,23 @@
     flex-direction: column;
     gap: 36px;
   }
+  .heading{
+    display: flex;
+    justify-content: space-between;
+  }
+  #btn-mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90px;
+    letter-spacing: 2.5px;
+    color: var(--lm-text);
+    font-weight: bold;
+  }
+  
+  #btn-mode:hover {
+    cursor: pointer;
+  }
   .searchbar-container {
     position: relative;
     background-color: var(--lm-bg-content);

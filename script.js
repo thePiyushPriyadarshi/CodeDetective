@@ -6,7 +6,10 @@ const errorMsg = document.querySelector("[error-Msg]");
 const notfound = document.querySelector(".not-found-container");
 const loading = document.querySelector(".loading");
 const defaultPage = document.querySelector(".default");
-
+const btnmode = document.getElementById("btn-mode");
+const modetext = document.getElementById("mode-text");
+const modeicon = document.getElementById("mode-icon");
+let darkMode = false;
 let username; 
 
 searchForm.addEventListener("submit",(e)=>{
@@ -87,4 +90,38 @@ function handleSlider(data){
 
     sliderHard.value= `${data?.hardSolved}`;
     sliderHard.max= `${data?.totalHard}`;
+}
+
+//Dark Mode
+btnmode.addEventListener("click", function () {
+  console.log("dark mode");
+  if (darkMode == false) {
+    darkModeProperties();
+  } else {
+    lightModeProperties();
+  }
+});
+function darkModeProperties() {
+  document.documentElement.style.setProperty("--lm-bg", "#141D2F");
+  document.documentElement.style.setProperty("--lm-bg-content", "#1E2A47");
+  document.documentElement.style.setProperty("--lm-text", "white");
+  document.documentElement.style.setProperty("--lm-text-alt", "white");
+  document.documentElement.style.setProperty("--lm-shadow-xl", "rgba(70,88,109,0.15)");
+  modetext.innerText = "LIGHT";
+  modeicon.src = "./assets/sun-icon.svg";
+  document.documentElement.style.setProperty("--lm-icon-bg", "brightness(1000%)");
+  darkMode = true;
+  localStorage.setItem("dark-mode", true);
+}
+function lightModeProperties() {
+  document.documentElement.style.setProperty("--lm-bg", "#F6F8FF");
+  document.documentElement.style.setProperty("--lm-bg-content", "#FEFEFE");
+  document.documentElement.style.setProperty("--lm-text", "#4B6A9B");
+  document.documentElement.style.setProperty("--lm-text-alt", "#2B3442");
+  document.documentElement.style.setProperty("--lm-shadow-xl", "rgba(70, 88, 109, 0.25)");
+  modetext.innerText = "DARK";
+  modeicon.src = "./assets/moon-icon.svg";
+  document.documentElement.style.setProperty("--lm-icon-bg", "brightness(100%)");
+  darkMode = false;
+  localStorage.setItem("dark-mode", false);
 }
