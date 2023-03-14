@@ -30,7 +30,7 @@ searchForm.addEventListener(
       if (e.key == "Enter") {
         if (input.value !== "") {
             profile.classList.remove("active"); 
-            otfound.classList.remove("active");
+            notfound.classList.remove("active");
             defaultPage.classList.add("hide"); 
             loading.classList.add("active");
             username =inputSearch.value; 
@@ -68,11 +68,13 @@ function renderDetails(data){
     const user = document.querySelector("[data-username]");
     const rank = document.querySelector("[data-rank]");
     const acceptance = document.querySelector("[data-acceptance]");
+    const totalsolved = document.querySelector("[data-totSolved]");
 
     easy.innerText =`${data?.easySolved} / ${data?.totalEasy}`;
     medium.innerText =`${data?.mediumSolved} / ${data?.totalMedium}`;
     hard.innerText =`${data?.hardSolved} / ${data?.totalHard}`;
     user.innerText = username;
+    totalsolved.innerText = `Total Solved : ${data?.totalSolved} / ${data?.totalQuestions}`;
     rank.innerText = `Rank : ${data?.ranking}`;
     acceptance.innerText = `Acceptance Rate : ${data?.acceptanceRate} %`;
     handleSlider(data);

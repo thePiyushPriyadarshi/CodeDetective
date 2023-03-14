@@ -25,7 +25,7 @@
         <div class="card">
             <form data-searchForm>
                 <div class="searchbar-container active">
-                    <input id="input" type="search" name="user-name" placeholder="Enter a LeetCode username..." required>
+                    <input type="search" name="user-input" id="input" placeholder="Enter a LeetCode username..." required> 
                     <button class="btn-search" id="submit" type="submit">Search</button>
                 </div>
             </form>
@@ -55,6 +55,9 @@
                             <p data-hard></p>
                         </div>
                         <input type="range" min="0" disabled slider-hard>
+                    </div>
+                    <div class="detail">
+                        <p data-totSolved></p>
                     </div>
                     <div class="detail">
                         <p data-rank></p>
